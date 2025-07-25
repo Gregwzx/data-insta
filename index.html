@@ -2,34 +2,26 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Insta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Insta - Análise</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Fonte Orbitron (futurista) -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Logo Data Insta" class="logo" />
-    <h1>📊 Data Insta</h1>
-    <p>Análise inteligente de perfis do Instagram</p>
-  </header>
+  <div class="container">
+    <h1>Data Insta</h1>
+    <input type="text" id="username" placeholder="@usuario">
+    <button id="analisarBtn">Analisar</button>
 
-  <main>
-    <section class="analyzer">
-      <input type="text" id="handle" placeholder="@nomedoperfil" />
-      <button id="analyzeBtn">Analisar</button>
-    </section>
-
-    <section id="result">
-      <!-- Resultado aparecerá aqui -->
-    </section>
-  </main>
-
-  <footer>
-    <p>Feito por <a href="https://github.com/Gregwzx" target="_blank">Gregwzx</a> 🚀</p>
-  </footer>
+    <div id="graficoSection" style="display:none;">
+      <canvas id="meuGrafico" width="400" height="200"></canvas>
+      <div class="tipo-grafico">
+        <button onclick="atualizarGrafico('bar')">Barras</button>
+        <button onclick="atualizarGrafico('pie')">Pizza</button>
+        <button onclick="atualizarGrafico('line')">Linha</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

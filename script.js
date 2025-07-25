@@ -1,43 +1,47 @@
-function analisarPerfil() {
-  const usuario = document.getElementById('username').value.trim();
-  if (!usuario) {
-    alert("Digite um @ válido!");
-    return;
-  }
+let chart;
 
-  // Mock de dados
-  const dados = {
-    nome: usuario,
-    seguidores: 8320,
-    curtidas: 723,
-    comentarios: 56,
-    engajamento: "9.36%",
-    horarios: "Segunda 18h, Quarta 21h, Sábado 10h",
-    palavras: "vida, projeto, foco, Deus, gratidão"
-  };
+const dadosFake = () => ({
+  labels: ['Likes', 'Comentários', 'Alcance', 'Salvos', 'Compartilhamentos'],
+  datasets: [{
+    label: 'Métricas (fake)',
+    data: Array.from({ length: 5 }, () => Math.floor(Math.random() * 1000)),
+    backgroundColor: ['#a855f7', '#9333ea', '#6b21a8', '#c084fc', '#d8b4fe'],
+    borderColor: '#ffffff',
+    borderWidth: 1
+  }]
+});
 
-  // Mostrar no HTML
-  document.getElementById("perfil-nome").textContent = dados.nome;
-  document.getElementById("seguidores").textContent = dados.seguidores;
-  document.getElementById("curtidas").textContent = dados.curtidas;
-  document.getElementById("comentarios").textContent = dados.comentarios;
-  document.getElementById("engajamento").textContent = dados.engajamento;
-  document.getElementById("horarios").textContent = dados.horarios;
-  document.getElementById("palavras").textContent = dados.palavras;
-
-  document.getElementById("resultado").classList.remove("hidden");
-
-  // Gráfico fake de exemplo
-  const ctx = document.getElementById('graficoEngajamento').getContext('2d');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-      datasets: [{
-        label: 'Engajamento (%)',
-        data: [6, 5, 9, 7, 4, 10, 8],
-        backgroundColor: '#ff0077'
-      }]
+function criarGrafico(tipo = 'bar') {
+  const ctx = document.getElementById('meuGrafico').getContext('2d');
+  if (chart) chart.destroy();
+  chart = new Chart(ctx, {
+    type: tipo,
+    data: dadosFake(),
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: { color: 'white' }
+        }
+      },
+      scales: tipo !== 'pie' ? {
+        y: {
+          beginAtZero: true,
+          ticks: { color: 'white' }
+        },
+        x: {
+          ticks: { color: 'white' }
+        }
+      } : {}
     }
   });
+}
+
+document.getElementById('analisarBtn').addEventListener('click', () => {
+  document.getElementById('graficoSection').style.display = 'block';
+  criarGrafico('bar');
+});
+
+function atualizarGrafico(tipo) {
+  criarGrafico(tipo);
 }

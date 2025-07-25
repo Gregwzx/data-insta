@@ -1,0 +1,21 @@
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.main-title {
+  display: block;
+  height: 130px;
+  color: #ffffff;
+  font-family: 'LEMON MILK', var(--default-font-family);
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 129.656px;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 6.72px;
+  text-shadow: 17px 10px 11.2px var(--shadow-color);
+}

@@ -1,0 +1,45 @@
+.main-footer {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  z-index: 8;
+}
+
+.credits-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.credits-text {
+  color: var(--text-secondary);
+  font-family: 'Inter', var(--default-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.045px;
+  text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+.credits-link {
+  color: var(--accent-color);
+  font-family: 'Inter', var(--default-font-family);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29.045px;
+  text-decoration: underline;
+  text-shadow: 2px 2px 4px var(--shadow-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.credits-link:hover {
+  color: #8a2be2;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+  transform: scale(1.05);
+}
+
+.credits-link:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
