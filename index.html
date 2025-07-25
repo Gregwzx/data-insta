@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InstaMétrica</title>
+  <title>Data Insta</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Fonte Orbitron (futurista) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>📊 InstaMétrica</h1>
-    <p>Analise qualquer perfil do Instagram em segundos.</p>
-    
-    <input id="username" type="text" placeholder="@usuario" />
-    <button onclick="analisarPerfil()">Analisar</button>
+  <header>
+    <img src="logo.png" alt="Logo Data Insta" class="logo" />
+    <h1>📊 Data Insta</h1>
+    <p>Análise inteligente de perfis do Instagram</p>
+  </header>
 
-    <div id="resultado" class="hidden">
-      <h2>🔍 Resultado para <span id="perfil-nome"></span></h2>
-      <ul>
-        <li><strong>Seguidores:</strong> <span id="seguidores"></span></li>
-        <li><strong>Média de curtidas:</strong> <span id="curtidas"></span></li>
-        <li><strong>Média de comentários:</strong> <span id="comentarios"></span></li>
-        <li><strong>Engajamento:</strong> <span id="engajamento"></span></li>
-        <li><strong>Melhores horários:</strong> <span id="horarios"></span></li>
-        <li><strong>Palavras frequentes:</strong> <span id="palavras"></span></li>
-      </ul>
+  <main>
+    <section class="analyzer">
+      <input type="text" id="handle" placeholder="@nomedoperfil" />
+      <button id="analyzeBtn">Analisar</button>
+    </section>
 
-      <canvas id="graficoEngajamento"></canvas>
-    </div>
-  </div>
+    <section id="result">
+      <!-- Resultado aparecerá aqui -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito por <a href="https://github.com/Gregwzx" target="_blank">Gregwzx</a> 🚀</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
