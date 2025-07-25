@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InstaMétrica</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 InstaMétrica</h1>
+    <p>Analise qualquer perfil do Instagram em segundos.</p>
+    
+    <input id="username" type="text" placeholder="@usuario" />
+    <button onclick="analisarPerfil()">Analisar</button>
+
+    <div id="resultado" class="hidden">
+      <h2>🔍 Resultado para <span id="perfil-nome"></span></h2>
+      <ul>
+        <li><strong>Seguidores:</strong> <span id="seguidores"></span></li>
+        <li><strong>Média de curtidas:</strong> <span id="curtidas"></span></li>
+        <li><strong>Média de comentários:</strong> <span id="comentarios"></span></li>
+        <li><strong>Engajamento:</strong> <span id="engajamento"></span></li>
+        <li><strong>Melhores horários:</strong> <span id="horarios"></span></li>
+        <li><strong>Palavras frequentes:</strong> <span id="palavras"></span></li>
+      </ul>
+
+      <canvas id="graficoEngajamento"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
